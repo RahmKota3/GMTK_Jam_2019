@@ -8,6 +8,7 @@ TagManager:
   - Hole
   - Projectile
   - GameManager
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,10 +19,10 @@ TagManager:
   - 
   - 
   - Unwalkable
-  - 
-  - 
-  - 
-  - 
+  - Enemies
+  - Player
+  - PlayerProjectile
+  - EnemyProjectile
   - 
   - 
   - 
