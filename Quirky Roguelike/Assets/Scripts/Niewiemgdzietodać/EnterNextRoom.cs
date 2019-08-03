@@ -28,10 +28,6 @@ public class EnterNextRoom : MonoBehaviour
             if (isOpened == true)
             {
                 Debug.Log("dszwi");
-                
-
-
-                //przejscie do kolejnej sceny
                 SceneManagerScript.Instance.Load(SceneManagerScript.Instance.RandomScene());
             }
             else

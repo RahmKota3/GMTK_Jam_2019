@@ -8,7 +8,6 @@ TagManager:
   - Hole
   - Projectile
   - GameManager
-  - Wall
   layers:
   - Default
   - TransparentFX

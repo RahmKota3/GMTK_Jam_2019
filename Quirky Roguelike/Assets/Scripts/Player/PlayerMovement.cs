@@ -13,12 +13,6 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = SpeedCalculator.CalculateSpeed();
     }
 
-    public void KnockBack()
-    {
-        Vector2 vector = new Vector2(0, -1);
-        rb.AddForce(vector * 1000);
-    }
-
     void ResetVelocity()
     {
         rb.velocity = Vector2.zero;
