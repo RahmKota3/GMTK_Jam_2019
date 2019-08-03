@@ -270,6 +270,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 618986072598482178, guid: edfa48fa23ca5d8478e05de3c7e840d8,
+        type: 3}
+      propertyPath: RaycastLayers.m_Bits
+      value: 3383
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edfa48fa23ca5d8478e05de3c7e840d8, type: 3}
 --- !u!1 &832027226
