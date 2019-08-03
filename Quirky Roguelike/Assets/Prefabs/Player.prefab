@@ -341,6 +341,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHp: 3
   CurrentHp: 1
+  IsStunned: 0
+  MaxSpeed: 8
+  ShootingQuirkKnockback: 750
 --- !u!114 &868116644
 MonoBehaviour:
   m_ObjectHideFlags: 0

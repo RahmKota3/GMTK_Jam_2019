@@ -54,6 +54,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (QuirkManager.Instance.ActiveQuirk == Quirks.MoveByShooting)
+            return;
+
         if (InputManager.Instance.WantsToMove && CanMove && stats.IsStunned == false)
             Move();
         else if(CanMove != false)
