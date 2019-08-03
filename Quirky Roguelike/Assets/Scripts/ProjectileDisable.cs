@@ -9,12 +9,6 @@ public class ProjectileDisable : MonoBehaviour
 
     float lifeTimer = 0;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("hit");
-        SimplePool.Despawn(gameObject);
-    }
-
     private void OnEnable()
     {
         lifeTimer = 0;

@@ -8,11 +8,7 @@ TagManager:
   - Hole
   - Projectile
   - GameManager
-<<<<<<< HEAD
   - Wall
-=======
-  - Enemy
->>>>>>> 3b5868f34b5a828e64972b7f092f642389b10dc6
   layers:
   - Default
   - TransparentFX
@@ -23,10 +19,10 @@ TagManager:
   - 
   - 
   - Unwalkable
-  - Enemies
-  - Player
-  - PlayerProjectile
-  - EnemyProjectile
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

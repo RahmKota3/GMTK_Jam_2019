@@ -39,7 +39,7 @@ public class AI_BasicAttack : BaseState
     public override Type Tick()
     {
         if (Vector2.Distance(ai.transform.position, stats.Target.position) > stats.AttackDistance && attackDelaySet == false)
-            return stats.MovementType;
+            return typeof(AI_BasicMovement);
 
         if (Time.time > attackTimer)
         {
