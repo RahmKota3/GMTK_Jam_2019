@@ -12,6 +12,10 @@ public class EntityStats : MonoBehaviour
     public Action OnEntityDeath;
     public Action OnHpChanged;
 
+    public bool IsStunned = false;
+    float stunTime = 0.25f;
+    float stunTimer = 0;
+
     public void ChangeHpBy(int amount = -1)
     {
         CurrentHp += amount;
@@ -28,5 +32,16 @@ public class EntityStats : MonoBehaviour
     protected virtual void Awake()
     {
         CurrentHp = MaxHp;
+    }
+
+    protected virtual void Update()
+    {
+        if (IsStunned)
+        {
+            stunTimer += Time.deltaTime;
+
+            if (stunTimer >= stunTime)
+                IsStunned = false;
+        }
     }
 }

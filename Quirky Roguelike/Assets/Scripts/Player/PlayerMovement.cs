@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     void ResetVelocity()
     {
-        rb.velocity = Vector2.zero;
+        //rb.velocity = Vector2.zero;
     }
 
     private void Start()
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (InputManager.Instance.WantsToMove && CanMove)
+        if (InputManager.Instance.WantsToMove && CanMove && stats.IsStunned == false)
             Move();
         else if(CanMove != false)
             ResetVelocity();

@@ -22,10 +22,14 @@ public class AI_BasicAttack : BaseState
         attackDelay = 0;
         attackDelaySet = false;
         attackTimer = Time.time + stats.AttackCooldown;
-        
+
+        Vector2 dir = (stats.Target.position - ai.transform.position).normalized * stats.AttackKnockback;
+
         if (dealDmg)
         {
             playerStats.ChangeHpBy();
+            playerStats.IsStunned = true;
+            stats.TargetRb.AddForce(dir * stats.AttackKnockback);
         }
     }
 

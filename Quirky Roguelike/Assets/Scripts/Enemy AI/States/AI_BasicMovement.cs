@@ -24,7 +24,7 @@ public class AI_BasicMovement : BaseState
 
         Vector2 dir = path[0] - (Vector2)transform.position;
 
-        if (rb.velocity.magnitude < stats.MovementSpeed)
+        if (rb.velocity.magnitude < stats.MovementSpeed && stats.IsStunned == false)
             rb.velocity += dir.normalized * stats.MovementSpeed;
 
         if (Vector2.Distance(transform.position, path[0]) <= 0.5f)
@@ -73,7 +73,9 @@ public class AI_BasicMovement : BaseState
         if (CheckIfNodeExists(stats.Target.position))
         {
             path = GetPath(stats.Target.position);
-            MoveTowardsTarget();
+
+            if(path != null && path.Count > 0)
+                MoveTowardsTarget();
         }
 
         //stats.AnimState = AnimationState.Walk;

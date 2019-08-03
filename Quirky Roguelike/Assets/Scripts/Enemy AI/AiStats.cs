@@ -21,8 +21,11 @@ public class AiStats : EntityStats
     public float AttackDistance = 2;
     public float AttackCooldown = 0.75f;
     public float AttackDelay = 0.5f;
+    public float AttackKnockback = 2000;
 
     public float MovementSpeed = 0.25f;
+
+    public Rigidbody2D TargetRb;
 
     public Type AttackType { get; private set; }
     public Type MovementType { get; private set; }
@@ -58,6 +61,7 @@ public class AiStats : EntityStats
     {
         base.Awake();
         Target = GameObject.FindGameObjectWithTag("Player").transform;
+        TargetRb = Target.GetComponent<Rigidbody2D>();
         OnEntityDeath += Die;
         CurrentHp = MaxHp;
 
