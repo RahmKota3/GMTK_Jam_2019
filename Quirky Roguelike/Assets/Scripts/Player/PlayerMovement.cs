@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
+    PlayerStats stats;
 
     public bool CanMove = true;
 
@@ -18,12 +19,15 @@ public class PlayerMovement : MonoBehaviour
     
     void Move()
     {
-        if(QuirkManager.Instance.ActiveQuirk != Quirks.TileMovement)
-            rb.velocity = SpeedCalculator.CalculateSpeed();
-        else if(movementTimer <= 0)
+        if (QuirkManager.Instance.ActiveQuirk != Quirks.TileMovement)
+        {
+            if (rb.velocity.magnitude < stats.MaxSpeed)
+                rb.velocity += SpeedCalculator.CalculateSpeed();
+        }
+        else if (movementTimer <= 0)
         {
             movementTimer = movementCooldown;
-            Vector3 tileMovementVector = new Vector3(InputManager.Instance.HorizontalAxis, 
+            Vector3 tileMovementVector = new Vector3(InputManager.Instance.HorizontalAxis,
                 InputManager.Instance.VerticalAxis) * tileMovementDistance;
 
             RaycastHit2D hit = Physics2D.CircleCast(transform.position + tileMovementVector, 0.5f, Vector3.forward, 1, unwalkableForPlayer);
@@ -45,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        stats = GetComponent<PlayerStats>();
     }
 
     private void FixedUpdate()
