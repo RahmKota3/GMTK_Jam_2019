@@ -313,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManagerPrefab: {fileID: 4161118675964697066, guid: 3f27796f6015cc74e8723d9196aa75c3,
     type: 3}
-  quirkToActivate: 1
+  quirkToActivate: 0
 --- !u!4 &832027228
 Transform:
   m_ObjectHideFlags: 0

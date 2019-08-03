@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerStats : EntityStats
 {
+    public float MaxSpeed = 8;
+
     protected override void Die()
     {
         base.Die();

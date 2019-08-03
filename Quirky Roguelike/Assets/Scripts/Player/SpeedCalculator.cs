@@ -2,7 +2,7 @@
 
 public static class SpeedCalculator
 {
-    static float speed = 10f;
+    static float speed = 7f;
     
     public static Vector2 CalculateSpeed()
     {
