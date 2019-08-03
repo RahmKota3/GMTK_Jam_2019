@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 7552101852047597005}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 0.75, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 7552101852578880875}
   m_RootOrder: 0
@@ -86,6 +86,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -135,7 +136,7 @@ Transform:
   m_GameObject: {fileID: 7552101852405486497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.625, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 0.35, z: 1}
   m_Children: []
   m_Father: {fileID: 7552101852923598699}
   m_RootOrder: 0
@@ -165,6 +166,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -201,6 +203,8 @@ GameObject:
   - component: {fileID: 7552101852578880877}
   - component: {fileID: 1651145082}
   - component: {fileID: 125204171152170236}
+  - component: {fileID: 110519337}
+  - component: {fileID: 868116643}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -237,7 +241,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 7.5
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -259,7 +263,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.5, y: 1}
   m_Direction: 0
 --- !u!114 &1651145082
 MonoBehaviour:
@@ -287,6 +291,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cam: {fileID: 0}
   GunOrigin: {fileID: 7552101852923598699}
+--- !u!114 &110519337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552101852578880872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2f3b224b83767a4bbf6a6cf92b56e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrel: {fileID: 1732589508}
+  projectile: {fileID: 8443658912648173630, guid: c3c9993967aa7764985e55295b195c1c,
+    type: 3}
+  shootingCooldown: 0.3
+--- !u!114 &868116643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552101852578880872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729102219d85e6943bf0b434776c9ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashCooldown: 1
+  dashForce: 2500
 --- !u!1 &7552101852923598696
 GameObject:
   m_ObjectHideFlags: 0
