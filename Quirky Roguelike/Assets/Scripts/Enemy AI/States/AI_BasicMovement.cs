@@ -61,7 +61,13 @@ public class AI_BasicMovement : BaseState
     {
         if (Vector2.Distance(ai.transform.position, stats.Target.position) <= stats.AttackDistance)
         {
-            return stats.AttackType;
+            RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.5f, stats.Target.position - transform.position, 50, stats.RaycastLayers);
+            
+            if ((stats.Attack == AttackTypes.Basic) || (stats.Attack == AttackTypes.BasicShooting && hit &&
+                hit.collider.gameObject.tag == "Player"))
+            {
+                return stats.AttackType;
+            }
         }
 
         if (CheckIfNodeExists(stats.Target.position))

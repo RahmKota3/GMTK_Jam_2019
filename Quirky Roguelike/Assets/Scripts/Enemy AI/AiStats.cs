@@ -3,8 +3,19 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum AttackTypes { Basic, BasicShooting }
+public enum MovementTypes { Basic }
+
 public class AiStats : EntityStats
 {
+    public GameObject Projectile;
+    public Transform Barrel;
+
+    public LayerMask RaycastLayers;
+    
+    public AttackTypes Attack;
+    public MovementTypes Movement;
+
     public Transform Target;
 
     public float AttackDistance = 2;
@@ -14,6 +25,27 @@ public class AiStats : EntityStats
     public float MovementSpeed = 0.25f;
 
     public Type AttackType { get; private set; }
+    public Type MovementType { get; private set; }
+
+    void SetTypes()
+    {
+        switch (Attack)
+        {
+            case AttackTypes.Basic:
+                AttackType = typeof(AI_BasicAttack);
+                break;
+            case AttackTypes.BasicShooting:
+                AttackType = typeof(AI_BasicShooting);
+                break;
+        }
+
+        switch (Movement)
+        {
+            case MovementTypes.Basic:
+                MovementType = typeof(AI_BasicMovement);
+                break;
+        }
+    }
 
     protected override void Die()
     {
@@ -26,8 +58,9 @@ public class AiStats : EntityStats
     {
         base.Awake();
         Target = GameObject.FindGameObjectWithTag("Player").transform;
-        AttackType = typeof(AI_BasicAttack);
         OnEntityDeath += Die;
         CurrentHp = MaxHp;
+
+        SetTypes();
     }
 }
