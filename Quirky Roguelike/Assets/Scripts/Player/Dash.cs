@@ -17,6 +17,9 @@ public class Dash : MonoBehaviour
 
     void PerformDash()
     {
+        if (QuirkManager.Instance.ActiveQuirk == Quirks.MoveByShooting)
+            return;
+
         if (dashTimer >= dashCooldown)
         {
             Vector2 forceDir = transform.right * InputManager.Instance.HorizontalAxis + transform.up * InputManager.Instance.VerticalAxis;

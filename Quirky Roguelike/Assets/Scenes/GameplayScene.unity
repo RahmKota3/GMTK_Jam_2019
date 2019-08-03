@@ -313,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManagerPrefab: {fileID: 4161118675964697066, guid: 3f27796f6015cc74e8723d9196aa75c3,
     type: 3}
-  quirkToActivate: 0
+  quirkToActivate: 4
 --- !u!4 &832027228
 Transform:
   m_ObjectHideFlags: 0
@@ -695,6 +695,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BasicAI
+      objectReference: {fileID: 0}
+    - target: {fileID: 618986072598482184, guid: 9541b8b2d9cd2ad4192d29b97d86027c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 618986072598482185, guid: 9541b8b2d9cd2ad4192d29b97d86027c,
         type: 3}

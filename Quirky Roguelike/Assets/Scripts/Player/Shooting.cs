@@ -19,6 +19,9 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
+        if (QuirkManager.Instance.ActiveQuirk == Quirks.OnlyBombs)
+            return;
+
         if (shotTimer >= shootingCooldown)
         {
             GameObject p = SimplePool.Spawn(projectile, barrel.position, barrel.rotation);
