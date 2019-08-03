@@ -7,7 +7,7 @@ public class CrazyProjectileLife : MonoBehaviour
     [SerializeField]
     float speed = 15;
     [SerializeField]
-    float maxSpeed = 30;
+    float maxSpeed = 60;
 
     [SerializeField]
     Rigidbody2D rb;
@@ -16,8 +16,11 @@ public class CrazyProjectileLife : MonoBehaviour
     private Vector2 kierunek;
     Transform player;
 
+    
+
     private void Start()
     {
+      
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -27,25 +30,30 @@ public class CrazyProjectileLife : MonoBehaviour
         {
             Debug.Log("Górna ściana");
             kierunek = new Vector2(Random.Range(-6.0f, 6.0f), Random.Range(3.0f, -6.0f)).normalized;
+            
         }
         else if (collision.name == "MapBoundry2")
         {
             Debug.Log("Dolna ściana");
             kierunek = new Vector2(Random.Range(-6.0f, 6.0f), Random.Range(3.0f, 6.0f)).normalized;
+            
         }
         else if (collision.name == "MapBoundry3")
         {
             Debug.Log("Lewa ściana");
             kierunek = new Vector2(Random.Range(3.0f, 6.0f), Random.Range(-6.0f, 6.0f)).normalized;
+            
         }
         else if (collision.name == "MapBoundry4")
         {
             Debug.Log("prawa ściana");
             kierunek = new Vector2(Random.Range(3.0f, -6.0f), Random.Range(-6.0f, 6.0f)).normalized;
+            
         }
         else
         {
-            kierunek = new Vector2(Random.Range(-6.0f, 6.0f), Random.Range(-6.0f, 6.0f)).normalized;
+            kierunek = new Vector2(Random.Range(3.0f, -3.0f), Random.Range(-3.0f, 3.0f)).normalized;
+            
         }
         if (speed < maxSpeed)
         {
