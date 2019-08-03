@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
+    public Slider volumeSlider;
 
     public AudioMixer audioMixer;
 
@@ -16,6 +17,8 @@ public class OptionsMenu : MonoBehaviour
 
     private void Start()
     {
+        volumeSlider.value = PlayerPrefs.GetFloat("volume");
+
         resolutions = Screen.resolutions;
 
         resolutionDropdown.ClearOptions();
@@ -48,6 +51,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
+        PlayerPrefs.SetFloat("volume", volume);
         audioMixer.SetFloat("volume", volume);
     }
 
