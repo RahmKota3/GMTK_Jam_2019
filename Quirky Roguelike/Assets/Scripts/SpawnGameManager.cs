@@ -15,7 +15,8 @@ public class SpawnGameManager : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("GameManager") == null)
         {
             Instantiate(gameManagerPrefab, Vector3.zero, Quaternion.identity);
-            QuirkManager.Instance.ActiveQuirk = quirkToActivate;
         }
+
+        QuirkManager.Instance.ActiveQuirk = quirkToActivate;
     }
 }
