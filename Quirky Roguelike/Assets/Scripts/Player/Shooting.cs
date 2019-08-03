@@ -12,6 +12,9 @@ public class Shooting : MonoBehaviour
     [SerializeField]
     float shootingCooldown = 0.25f;
 
+    Rigidbody2D rb;
+    PlayerStats stats;
+
     float shotTimer = 1;
 
     void Shoot()
@@ -21,16 +24,18 @@ public class Shooting : MonoBehaviour
             GameObject p = SimplePool.Spawn(projectile, barrel.position, barrel.rotation);
 
             shotTimer = 0;
+
+            if(QuirkManager.Instance.ActiveQuirk == Quirks.MoveByShooting)
+            {
+                rb.AddForce(-barrel.transform.right * stats.ShootingQuirkKnockback);
+            }
         }
     }
-
-    private void Awake()
-    {
-        //SimplePool.Preload(projectile, 30);
-    }
-
+    
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        stats = GetComponent<PlayerStats>();
         InputManager.Instance.OnShootPressed += Shoot;
     }
 

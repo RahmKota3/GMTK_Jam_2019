@@ -129,7 +129,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHp: 3
   CurrentHp: 1
+  IsStunned: 0
   Projectile: {fileID: 0}
   Barrel: {fileID: 0}
   RaycastLayers:
@@ -176,10 +177,12 @@ MonoBehaviour:
   Attack: 0
   Movement: 0
   Target: {fileID: 0}
-  AttackDistance: 2.5
+  AttackDistance: 2
   AttackCooldown: 0.5
   AttackDelay: 0.5
+  AttackKnockback: 30
   MovementSpeed: 6
+  TargetRb: {fileID: 0}
 --- !u!114 &618986072598482181
 MonoBehaviour:
   m_ObjectHideFlags: 0
