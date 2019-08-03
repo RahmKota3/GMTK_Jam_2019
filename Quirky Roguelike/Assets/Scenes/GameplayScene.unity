@@ -215,6 +215,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicShootingAI
       objectReference: {fileID: 0}
+    - target: {fileID: 618986072598482184, guid: edfa48fa23ca5d8478e05de3c7e840d8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 618986072598482185, guid: edfa48fa23ca5d8478e05de3c7e840d8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -308,6 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManagerPrefab: {fileID: 4161118675964697066, guid: 3f27796f6015cc74e8723d9196aa75c3,
     type: 3}
+  quirkToActivate: 1
 --- !u!4 &832027228
 Transform:
   m_ObjectHideFlags: 0
@@ -962,10 +968,5 @@ PrefabInstance:
       propertyPath: Cam
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 7552101852578880874, guid: ed3de66b5d99b434995206f6951017de,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed3de66b5d99b434995206f6951017de, type: 3}

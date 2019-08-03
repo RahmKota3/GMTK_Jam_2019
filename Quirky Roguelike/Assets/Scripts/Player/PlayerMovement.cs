@@ -7,10 +7,29 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
 
     public bool CanMove = true;
+
+    float movementCooldown = 0.5f;
+    float movementTimer = 0;
+
+    float tileMovementDistance = 1.5f;
+
+    [SerializeField]
+    LayerMask unwalkableForPlayer;
     
     void Move()
     {
-        rb.velocity = SpeedCalculator.CalculateSpeed();
+        if(QuirkManager.Instance.ActiveQuirk != Quirks.TileMovement)
+            rb.velocity = SpeedCalculator.CalculateSpeed();
+        else if(movementTimer <= 0)
+        {
+            movementTimer = movementCooldown;
+            Vector3 tileMovementVector = new Vector3(InputManager.Instance.HorizontalAxis, 
+                InputManager.Instance.VerticalAxis) * tileMovementDistance;
+
+            RaycastHit2D hit = Physics2D.CircleCast(transform.position + tileMovementVector, 0.5f, Vector3.forward, 1, unwalkableForPlayer);
+            if (hit == false)
+                transform.position += tileMovementVector;
+        }
     }
 
     void ResetVelocity()
@@ -34,5 +53,10 @@ public class PlayerMovement : MonoBehaviour
             Move();
         else if(CanMove != false)
             ResetVelocity();
+    }
+
+    private void Update()
+    {
+        movementTimer = Mathf.Clamp(movementTimer - Time.deltaTime, 0, 10);
     }
 }
