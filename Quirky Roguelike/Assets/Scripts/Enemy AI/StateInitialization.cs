@@ -15,7 +15,6 @@ public class StateInitialization : MonoBehaviour
         var states = new Dictionary<Type, BaseState>()
         {
             { typeof(AI_BasicAttack), new AI_BasicAttack(ai: this) },
-            { typeof(AI_BasicShooting), new AI_BasicShooting(ai: this) },
             { typeof(AI_BasicMovement), new AI_BasicMovement(ai: this, pathfinding: pathf) },
         };
 

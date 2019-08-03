@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1732589508}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7552101852047597004}
   - component: {fileID: 7552101852047597007}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: PlayerGraphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7552101852405486496}
   - component: {fileID: 7552101852405486499}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: GunGraphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 868116643}
   - component: {fileID: 7419121514943752020}
   - component: {fileID: 868116644}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7552101852923598699}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: GunHandOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
