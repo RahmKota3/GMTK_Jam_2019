@@ -28,6 +28,7 @@ public class EnterNextRoom : MonoBehaviour
             if (isOpened == true)
             {
                 Debug.Log("dszwi");
+                QuirkManager.Instance.QuirkCleanup();
                 SceneManagerScript.Instance.Load(SceneManagerScript.Instance.RandomScene());
             }
             else

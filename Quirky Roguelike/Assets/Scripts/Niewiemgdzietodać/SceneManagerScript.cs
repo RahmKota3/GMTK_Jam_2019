@@ -41,7 +41,7 @@ public class SceneManagerScript : MonoBehaviour
         Scene nextScene;
         //losowanie sceny
         // Scene[] sceny = { Scene.Test1, Scene.Test2, Scene.Test3 };
-        int randomIndex= 0;
+        int randomIndex = 0;
         if (visitedScenes != numberOfScenes)
         {
             while (true)
@@ -57,9 +57,11 @@ public class SceneManagerScript : MonoBehaviour
             }
         }
         Debug.Log(TestoweSceny[randomIndex]);
+
         nextScene = TestoweSceny[randomIndex];
 
         currentScene = nextScene;
+
         return nextScene;
     }
 
@@ -67,6 +69,7 @@ public class SceneManagerScript : MonoBehaviour
     {
         Debug.Log("Load Scene");
         SceneManager.LoadScene(scene.ToString());
+        QuirkManager.Instance.QuirkSetup();
     }
 
 

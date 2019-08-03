@@ -19,4 +19,10 @@ public class SpawnGameManager : MonoBehaviour
 
         QuirkManager.Instance.ActiveQuirk = quirkToActivate;
     }
+
+    private void Start()
+    {
+
+        QuirkManager.Instance.QuirkSetup();
+    }
 }
