@@ -23,14 +23,10 @@ public class EntityStats : MonoBehaviour
             OnEntityDeath.Invoke();
     }
 
-    void Die()
-    {
-        Destroy(gameObject);
-    }
+    protected virtual void Die() { }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         CurrentHp = MaxHp;
-        OnEntityDeath += Die;
     }
 }

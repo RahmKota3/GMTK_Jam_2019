@@ -17,8 +17,13 @@ public class DamageDetection : MonoBehaviour
             takeDmg = true;
             respawn = true;
         }
-        else if(collision.gameObject.tag == "Projectile")
+        else if(collision.gameObject.tag == "Projectile" && gameObject.tag == "Player")
         {
+            takeDmg = true;
+        }
+        else if(collision.gameObject.tag == "PlayerProjectile" && gameObject.tag != "Player")
+        {
+            Debug.Log("asdf");
             takeDmg = true;
         }
 

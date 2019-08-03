@@ -11,7 +11,7 @@ public class SceneManagerScript : MonoBehaviour
     {
         if (Instance == null)
         {
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
             Instance = this;
         }
         else if(Instance != this)
