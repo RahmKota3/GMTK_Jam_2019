@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AI_BasicAttack : BaseState
+public class AI_BasicShooting : BaseState
 {
     StateInitialization ai;
     AiStats stats;
@@ -14,7 +14,7 @@ public class AI_BasicAttack : BaseState
     bool attackDelaySet = false;
     float attackTimer = 0;
 
-    void Attack(bool dealDmg)
+    void Attack()
     {
         if (playerStats == null)
             playerStats = stats.Target.GetComponent<PlayerStats>();
@@ -23,13 +23,10 @@ public class AI_BasicAttack : BaseState
         attackDelaySet = false;
         attackTimer = Time.time + stats.AttackCooldown;
         
-        if (dealDmg)
-        {
-            playerStats.ChangeHpBy();
-        }
+        SimplePool.Spawn(stats.Projectile, stats.Barrel.position, stats.Barrel.rotation);
     }
 
-    public AI_BasicAttack(StateInitialization ai) : base(ai.gameObject)
+    public AI_BasicShooting(StateInitialization ai) : base(ai.gameObject)
     {
         this.ai = ai;
         rb = ai.GetComponent<Rigidbody2D>();
@@ -50,18 +47,16 @@ public class AI_BasicAttack : BaseState
             }
             else if (Time.time > attackDelay)
             {
-                bool dealDmg = true;
+                Vector2 dir = (stats.Target.position - transform.position).normalized;
+                stats.Barrel.transform.right = dir;
 
-                if (Vector2.Distance(ai.transform.position, stats.Target.position) > stats.AttackDistance)
-                    dealDmg = false;
-
-                Attack(dealDmg);
+                Attack();
 
                 //stats.AnimState = AnimationState.Attack;
             }
         }
 
-        return typeof(AI_BasicAttack);
+        return stats.AttackType;
     }
 
 }
