@@ -21,8 +21,10 @@ public class InputManager : MonoBehaviour
     void CheckInput()
     {
         // Check axis
-        HorizontalAxis = Input.GetAxis("Horizontal");
-        VerticalAxis = Input.GetAxis("Vertical");
+        HorizontalAxis = Input.GetAxisRaw("Horizontal");
+        //HorizontalAxis = Input.GetAxis("Horizontal");
+        VerticalAxis = Input.GetAxisRaw("Vertical");
+        //VerticalAxis = Input.GetAxis("Vertical");
 
         if (HorizontalAxis == 0 && VerticalAxis == 0)
             WantsToMove = false;
