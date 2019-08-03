@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public enum Quirks { None, TileMovement, OneHp, MoveByShooting, OnlyBombs }
+public enum Quirks { None, TileMovement, OneHp, MoveByShooting, OnlyBombs, OneBullet }
 
 public class QuirkManager : MonoBehaviour
 {
