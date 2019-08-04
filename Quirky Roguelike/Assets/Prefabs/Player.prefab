@@ -97,7 +97,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 577497841
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bc3c304210fb7af48b33da2c6ea1911c, type: 3}
   m_Color: {r: 0.138492, g: 0.2264151, b: 0.10786757, a: 1}
@@ -177,7 +177,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 577497841
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: bc3c304210fb7af48b33da2c6ea1911c, type: 3}
   m_Color: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
@@ -326,6 +326,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 729102219d85e6943bf0b434776c9ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultLM:
+    serializedVersion: 2
+    m_Bits: 1024
+  dashingLM:
+    serializedVersion: 2
+    m_Bits: 16384
   dashCooldown: 1
   dashForce: 2500
 --- !u!114 &7419121514943752020

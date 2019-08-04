@@ -24,8 +24,8 @@ TagManager:
   - PlayerProjectile
   - EnemyProjectile
   - Hole
-  - 
-  - 
+  - PlayerDashing
+  - LevelBounds
   - 
   - 
   - 
@@ -57,4 +57,7 @@ TagManager:
     locked: 0
   - name: ScreenHider
     uniqueID: 255881871
+    locked: 0
+  - name: LevelBoundaries
+    uniqueID: 145084197
     locked: 0

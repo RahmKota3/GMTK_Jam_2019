@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManagerPrefab: {fileID: 4161118675964697066, guid: 3f27796f6015cc74e8723d9196aa75c3,
     type: 3}
-  quirkToActivate: 6
+  quirkToActivate: 0
 --- !u!4 &832027228
 Transform:
   m_ObjectHideFlags: 0
@@ -978,7 +978,7 @@ PrefabInstance:
     - target: {fileID: 3762643979269658004, guid: e1fdb1a7349d0714c9af5bc59d385fda,
         type: 3}
       propertyPath: UnwalkableMask.m_Bits
-      value: 8448
+      value: 41216
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1fdb1a7349d0714c9af5bc59d385fda, type: 3}
