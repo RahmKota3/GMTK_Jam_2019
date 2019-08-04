@@ -28,7 +28,7 @@ public class SceneManagerScript : MonoBehaviour
     public Scene currentScene;
     public List<Scene> TestoweSceny = new List<Scene>();
     private bool[] visited = new bool[100];
-    public int numberOfScenes = 3;
+    public int numberOfScenes = TestoweSceny.Count;
     public int visitedScenes = 0;
 
     public Scene RandomScene()
@@ -50,6 +50,13 @@ public class SceneManagerScript : MonoBehaviour
                     break;
                 }
 
+            }
+        }
+        else
+        {
+            for(int i = 0; i < numberOfScenes; i++)
+            {
+                visited[i] = false;
             }
         }
         Debug.Log(TestoweSceny[randomIndex]);

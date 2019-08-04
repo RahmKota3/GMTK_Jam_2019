@@ -6,7 +6,7 @@ public class DamageDetection : MonoBehaviour
 {
     EntityStats stats;
 
-    public float RespawnSafeDistance;
+    public float RespawnSafeDistance = 5;
 
     bool takeDmg = false;
     bool respawn = false;
