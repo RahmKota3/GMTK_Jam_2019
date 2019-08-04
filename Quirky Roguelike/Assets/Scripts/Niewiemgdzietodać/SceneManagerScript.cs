@@ -11,7 +11,7 @@ public class SceneManagerScript : MonoBehaviour
     {
         if (Instance == null)
         {
-            //DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
             Instance = this;
         }
         else if(Instance != this)
@@ -28,42 +28,18 @@ public class SceneManagerScript : MonoBehaviour
     public Scene currentScene;
     //nazwa enum scen ma być taka sama jak sceny do losowanie, trzeba dodać wszystkie enumy tu V
     public static List<Scene> TestoweSceny = new List<Scene>() { Scene.BombLevel, Scene.HalfScreenVisible };
-    private bool[] visited = new bool[100];
     public int numberOfScenes = 3;
-    public int visitedScenes = 0;
-
     public Scene RandomScene()
     {
-        Debug.Log("GenerateScene");
         Scene nextScene;
         //losowanie sceny
         // Scene[] sceny = { Scene.Test1, Scene.Test2, Scene.Test3 };
         int randomIndex = 0;
-        numberOfScenes = TestoweSceny.Count;
-        if (visitedScenes != numberOfScenes)
-        {
-            while (true)
-            {
-                randomIndex = Random.Range(0, numberOfScenes); //zmienic size na coś normalnego xd
-                if (visited[randomIndex] == false)
-                {
-                    visited[randomIndex] = true;
-                    visitedScenes++;
-                    break;
-                }
 
-            }
-        }
-        else
-        {
-            for(int i = 0; i < numberOfScenes; i++)
-            {
-                visitedScenes = 0;
-                visited[i] = false;
-            }
-        }
-        Debug.Log(TestoweSceny[randomIndex]);
-
+            
+        randomIndex = Random.Range(0, numberOfScenes); //zmienic size na coś normalnego xd
+                
+        
         nextScene = TestoweSceny[randomIndex];
 
         currentScene = nextScene;
