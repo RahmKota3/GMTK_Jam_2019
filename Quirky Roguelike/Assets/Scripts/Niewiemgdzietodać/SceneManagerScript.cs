@@ -26,9 +26,10 @@ public class SceneManagerScript : MonoBehaviour
         BombLevel, HalfScreenVisible
     }
     public Scene currentScene;
-    public List<Scene> TestoweSceny = new List<Scene>();
+    //nazwa enum scen ma być taka sama jak sceny do losowanie, trzeba dodać wszystkie enumy tu V
+    public static List<Scene> TestoweSceny = new List<Scene>() { Scene.BombLevel, Scene.HalfScreenVisible };
     private bool[] visited = new bool[100];
-    public int numberOfScenes = TestoweSceny.Count;
+    public int numberOfScenes = 3;
     public int visitedScenes = 0;
 
     public Scene RandomScene()
@@ -38,6 +39,7 @@ public class SceneManagerScript : MonoBehaviour
         //losowanie sceny
         // Scene[] sceny = { Scene.Test1, Scene.Test2, Scene.Test3 };
         int randomIndex = 0;
+        numberOfScenes = TestoweSceny.Count;
         if (visitedScenes != numberOfScenes)
         {
             while (true)
@@ -56,6 +58,7 @@ public class SceneManagerScript : MonoBehaviour
         {
             for(int i = 0; i < numberOfScenes; i++)
             {
+                visitedScenes = 0;
                 visited[i] = false;
             }
         }
