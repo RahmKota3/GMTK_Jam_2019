@@ -21,7 +21,7 @@ public class ScreenHider : MonoBehaviour
         LeftHider.SetActive(false);
     }
 
-    void DestroyScreenHider()
+    void DestroyScreenHider(UnityEngine.SceneManagement.Scene current, UnityEngine.SceneManagement.Scene next)
     {
         InputManager.Instance.OnShootPressed -= ShowLeftSide;
         InputManager.Instance.OnRMBPressed -= ShowRightSide;
@@ -29,7 +29,8 @@ public class ScreenHider : MonoBehaviour
 
     private void Start()
     {
-        QuirkManager.Instance.OnQuirkChange += DestroyScreenHider;
+        //QuirkManager.Instance.OnQuirkChange += DestroyScreenHider;
+        UnityEngine.SceneManagement.SceneManager.activeSceneChanged += DestroyScreenHider;
 
         InputManager.Instance.OnShootPressed += ShowRightSide;
         InputManager.Instance.OnRMBPressed += ShowLeftSide;

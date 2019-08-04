@@ -48,6 +48,9 @@ public class BombExploding : MonoBehaviour
         if (timer >= timeBeforeExplosion && exploded == false)
             Explode();
         else if (exploded && timer >= timeBeforeExplosion + 0.15f)
-            SimplePool.Despawn(gameObject);
+        {
+            gameObject.SetActive(false);
+            //SimplePool.Despawn(gameObject);
+        }
     }
 }

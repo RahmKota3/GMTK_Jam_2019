@@ -54,7 +54,8 @@ public class AiStats : EntityStats
     {
         base.Die();
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     protected override void Awake()

@@ -23,7 +23,8 @@ public class AI_BasicShooting : BaseState
         attackDelaySet = false;
         attackTimer = Time.time + stats.AttackCooldown;
         
-        SimplePool.Spawn(stats.Projectile, stats.Barrel.position, stats.Barrel.rotation);
+        GameObject.Instantiate(stats.Projectile, stats.Barrel.position, stats.Barrel.rotation);
+        //SimplePool.Spawn(stats.Projectile, stats.Barrel.position, stats.Barrel.rotation);
     }
 
     public AI_BasicShooting(StateInitialization ai) : base(ai.gameObject)

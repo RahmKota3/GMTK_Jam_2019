@@ -27,7 +27,8 @@ public class Shooting : MonoBehaviour
         if (shotTimer >= shootingCooldown && (QuirkManager.Instance.ActiveQuirk != Quirks.OneBullet || 
             (QuirkManager.Instance.ActiveQuirk == Quirks.OneBullet && hasABullet)))
         {
-            GameObject p = SimplePool.Spawn(projectile, barrel.position, barrel.rotation);
+            //GameObject p = SimplePool.Spawn(projectile, barrel.position, barrel.rotation);
+            GameObject p = Instantiate(projectile, barrel.position, barrel.rotation);
 
             shotTimer = 0;
 

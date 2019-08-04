@@ -9,9 +9,15 @@ public class ProjectileDisable : MonoBehaviour
 
     float lifeTimer = 0;
 
+    private void OnDestroy()
+    {
+        Debug.Log("KURWA WTF");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SimplePool.Despawn(gameObject);
+        gameObject.SetActive(false);
+        //SimplePool.Despawn(gameObject);
     }
 
     private void OnEnable()
@@ -24,6 +30,9 @@ public class ProjectileDisable : MonoBehaviour
         lifeTimer += Time.deltaTime;
 
         if (lifeTimer >= maxLifeTime)
-            SimplePool.Despawn(gameObject);
+        {
+            gameObject.SetActive(false);
+            //SimplePool.Despawn(gameObject);
+        }
     }
 }

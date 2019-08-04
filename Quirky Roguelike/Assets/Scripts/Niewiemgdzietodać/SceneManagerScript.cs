@@ -23,15 +23,18 @@ public class SceneManagerScript : MonoBehaviour
     //============KONIEC SINGLETONA=======================
     
     public enum Scene {
-        BombLevel, HalfScreenVisible, CrazyProjectile, MoveByShooting
+        BombLevel, HalfScreenVisible, CrazyProjectile, MoveByShooting, OneTileMovement
     }
     public Scene currentScene;
     //nazwa enum scen ma być taka sama jak sceny do losowanie, trzeba dodać wszystkie enumy tu V
-    public static List<Scene> TestoweSceny = new List<Scene>() { Scene.BombLevel, Scene.HalfScreenVisible, Scene.CrazyProjectile, Scene.MoveByShooting };
-    public int numberOfScenes = 4;
+    public static List<Scene> TestoweSceny = new List<Scene>() { Scene.BombLevel, Scene.HalfScreenVisible,
+        Scene.CrazyProjectile, Scene.MoveByShooting, Scene.OneTileMovement };
+    int numberOfScenes = 4;
+    //public int numberOfScenes = 4;
     int previousScene = 999;
     public Scene RandomScene()
     {
+        numberOfScenes = TestoweSceny.Count;
         Scene nextScene;
         //losowanie sceny
         // Scene[] sceny = { Scene.Test1, Scene.Test2, Scene.Test3 };
@@ -57,7 +60,7 @@ public class SceneManagerScript : MonoBehaviour
 
     public void Load(Scene scene)
     {
-        Debug.Log("Load Scene");
+        //Debug.Log("Load Scene");
         SceneManager.LoadScene(scene.ToString());
         QuirkManager.Instance.QuirkSetup();
     }
