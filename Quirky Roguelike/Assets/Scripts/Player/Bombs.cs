@@ -17,7 +17,7 @@ public class Bombs : MonoBehaviour
 
         if (bombTimer >= bombCooldown)
         {
-            GameObject.Instantiate(bombPrefab, transform.position, Quaternion.identity);
+            Instantiate(bombPrefab, transform.position, Quaternion.identity);
             //SimplePool.Spawn(bombPrefab, transform.position, Quaternion.identity);
             bombTimer = 0;
         }
