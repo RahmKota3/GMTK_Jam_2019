@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-
     public static InputManager Instance;
 
     [HideInInspector]
@@ -15,6 +14,7 @@ public class InputManager : MonoBehaviour
     
     public Action OnShootPressed;
     public Action OnDashPressed;
+    public Action OnRMBPressed;
 
     public bool WantsToMove = false;
 
@@ -38,6 +38,9 @@ public class InputManager : MonoBehaviour
         // Check dash button
         if (Input.GetButtonDown("Dash") && OnDashPressed != null)
             OnDashPressed.Invoke();
+
+        if (Input.GetButton("RMB") && OnRMBPressed != null)
+            OnRMBPressed.Invoke();
     }
 
     private void Awake()

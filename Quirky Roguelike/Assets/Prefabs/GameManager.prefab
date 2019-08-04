@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveQuirk: 0
+  screenHiderPrefab: {fileID: 2649987469494297647, guid: f9f7072d5eded794bb19597d94f20ef5,
+    type: 3}
 --- !u!114 &4161118675964697063
 MonoBehaviour:
   m_ObjectHideFlags: 0

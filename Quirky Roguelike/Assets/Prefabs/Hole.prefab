@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2714086325306304644}
   - component: {fileID: 2714086325306304645}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Hole
   m_TagString: Hole
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2714086326510071654}
   - component: {fileID: 2714086326510071653}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}

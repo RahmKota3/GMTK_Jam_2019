@@ -23,7 +23,7 @@ TagManager:
   - Player
   - PlayerProjectile
   - EnemyProjectile
-  - 
+  - Hole
   - 
   - 
   - 
@@ -54,4 +54,7 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 147880321
+    locked: 0
+  - name: ScreenHider
+    uniqueID: 255881871
     locked: 0
