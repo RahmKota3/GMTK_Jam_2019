@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 618986072598482180}
   - component: {fileID: 1804682183}
   m_Layer: 9
-  m_Name: BasicShootingAI
+  m_Name: BombLevelShootingAI
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6137238b77236d445b83a3a303ee5131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 3
+  MaxHp: 1
   CurrentHp: 1
   IsStunned: 0
   Projectile: {fileID: 8443658912648173630, guid: 1a3e079c38f8a3a4c9f8424b9cef8f18,
@@ -213,7 +213,7 @@ MonoBehaviour:
   AttackCooldown: 1
   AttackDelay: 0.5
   AttackKnockback: 2000
-  MovementSpeed: 6
+  MovementSpeed: 4
   TargetRb: {fileID: 0}
 --- !u!114 &618986072598482181
 MonoBehaviour:

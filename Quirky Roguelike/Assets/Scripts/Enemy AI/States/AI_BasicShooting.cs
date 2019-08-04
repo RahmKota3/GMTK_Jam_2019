@@ -38,6 +38,11 @@ public class AI_BasicShooting : BaseState
         if (Vector2.Distance(ai.transform.position, stats.Target.position) > stats.AttackDistance && attackDelaySet == false)
             return stats.MovementType;
 
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.5f, stats.Target.position - transform.position, 50, stats.RaycastLayers);
+
+        if (hit == false || hit.collider.gameObject.tag != "Player")
+            return stats.MovementType;
+
         if (Time.time > attackTimer)
         {
             if (attackDelaySet == false)

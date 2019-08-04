@@ -181,7 +181,7 @@ MonoBehaviour:
   AttackCooldown: 0.5
   AttackDelay: 0.5
   AttackKnockback: 30
-  MovementSpeed: 3
+  MovementSpeed: 4
   TargetRb: {fileID: 0}
 --- !u!114 &618986072598482181
 MonoBehaviour:

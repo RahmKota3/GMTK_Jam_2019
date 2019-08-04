@@ -51,7 +51,7 @@ MonoBehaviour:
   ColorWalkable: {r: 0.27772337, g: 0.7160473, b: 0.745283, a: 0.49019608}
   ColorUnwalkable: {r: 0.7264151, g: 0.3186632, b: 0.64311105, a: 0.49019608}
   WorldSize: {x: 35.5, y: 20}
-  NodeRadius: 0.5
+  NodeRadius: 0.35
 --- !u!114 &3762643979269658005
 MonoBehaviour:
   m_ObjectHideFlags: 0
