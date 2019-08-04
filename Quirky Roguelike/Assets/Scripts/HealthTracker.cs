@@ -10,7 +10,6 @@ public class HealthTracker : MonoBehaviour
     void HpChange()
     {
         PlayerPrefs.SetInt("Health", stats.CurrentHp);
-        Debug.Log("KURWAAAAAAAAAAAAAAA" + PlayerPrefs.GetInt("Health"));
     }
     
     void Setup(Scene current, Scene next)
