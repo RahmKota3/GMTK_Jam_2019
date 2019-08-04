@@ -11,6 +11,8 @@ public class QuirkManager : MonoBehaviour
     
     public Quirks ActiveQuirk = Quirks.None;
 
+    public Action OnQuirkChange;
+
     [SerializeField]
     GameObject screenHiderPrefab;
 
@@ -42,13 +44,13 @@ public class QuirkManager : MonoBehaviour
     }
     public void QuirkCleanup()
     {
+        if (OnQuirkChange != null)
+            OnQuirkChange.Invoke();
+
         switch (ActiveQuirk)
         {
             case Quirks.OneHp:
                 stats.ChangeHpBy(playerHP - 1);
-                break;
-            case Quirks.HalfScreenVisible:
-                Destroy(screenHiderInstance);
                 break;
         }
     }

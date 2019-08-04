@@ -45,5 +45,8 @@ public class Shooting : MonoBehaviour
     private void Update()
     {
         shotTimer += Time.deltaTime;
+
+        if (QuirkManager.Instance.ActiveQuirk == Quirks.HalfScreenVisible && shotTimer >= shootingCooldown)
+            Shoot();
     }
 }

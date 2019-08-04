@@ -89,6 +89,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2649987469494297632}
+  - component: {fileID: -5246319241960945492}
   m_Layer: 0
   m_Name: ScreenHider
   m_TagString: Untagged
@@ -112,6 +113,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5246319241960945492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2649987469494297647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a857891bc2a8eff468ad001202e32911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RightHider: {fileID: 2649987468758604859}
+  LeftHider: {fileID: 2649987470180414929}
 --- !u!1 &2649987470180414929
 GameObject:
   m_ObjectHideFlags: 0
