@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalLevels/HalfScreenVisible.unity
     guid: 4dad76135ed369c478a83a29f82fb490
+  - enabled: 1
+    path: Assets/Scenes/FinalLevels/CrazyProjectile.unity
+    guid: aaadd915c68ea014e88dcb2581429abf
+  - enabled: 1
+    path: Assets/Scenes/FinalLevels/MoveByShooting.unity
+    guid: e475c64107718a843be768589dc865d6
   m_configObjects: {}
