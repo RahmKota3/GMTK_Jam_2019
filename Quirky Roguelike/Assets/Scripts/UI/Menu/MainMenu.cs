@@ -6,11 +6,15 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     
+
     public void PlayGame()
     {
-        PlayerPrefs.SetInt("Health", 3);
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene(1);
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 
 }
