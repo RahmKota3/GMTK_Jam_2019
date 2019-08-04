@@ -23,21 +23,29 @@ public class SceneManagerScript : MonoBehaviour
     //============KONIEC SINGLETONA=======================
     
     public enum Scene {
-        BombLevel, HalfScreenVisible
+        BombLevel, HalfScreenVisible, CrazyProjectile, MoveByShooting
     }
     public Scene currentScene;
     //nazwa enum scen ma być taka sama jak sceny do losowanie, trzeba dodać wszystkie enumy tu V
-    public static List<Scene> TestoweSceny = new List<Scene>() { Scene.BombLevel, Scene.HalfScreenVisible };
-    public int numberOfScenes = 3;
+    public static List<Scene> TestoweSceny = new List<Scene>() { Scene.BombLevel, Scene.HalfScreenVisible, Scene.CrazyProjectile, Scene.MoveByShooting };
+    public int numberOfScenes = 4;
+    int previousScene = 999;
     public Scene RandomScene()
     {
         Scene nextScene;
         //losowanie sceny
         // Scene[] sceny = { Scene.Test1, Scene.Test2, Scene.Test3 };
         int randomIndex = 0;
-
-            
-        randomIndex = Random.Range(0, numberOfScenes); //zmienic size na coś normalnego xd
+            while (true)
+        {
+            randomIndex = Random.Range(0, numberOfScenes);
+            if (randomIndex != previousScene)
+            {
+                previousScene = randomIndex;
+                break;
+            }
+        }
+        //zmienic size na coś normalnego xd
                 
         
         nextScene = TestoweSceny[randomIndex];
