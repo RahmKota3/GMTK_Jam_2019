@@ -17,12 +17,15 @@ public class Shooting : MonoBehaviour
 
     float shotTimer = 1;
 
+    bool hasABullet = true;
+
     void Shoot()
     {
         if (QuirkManager.Instance.ActiveQuirk == Quirks.OnlyBombs)
             return;
 
-        if (shotTimer >= shootingCooldown)
+        if (shotTimer >= shootingCooldown && (QuirkManager.Instance.ActiveQuirk != Quirks.OneBullet || 
+            (QuirkManager.Instance.ActiveQuirk == Quirks.OneBullet && hasABullet)))
         {
             GameObject p = SimplePool.Spawn(projectile, barrel.position, barrel.rotation);
 
@@ -32,6 +35,8 @@ public class Shooting : MonoBehaviour
             {
                 rb.AddForce(-barrel.transform.right * stats.ShootingQuirkKnockback);
             }
+
+            hasABullet = false;
         }
     }
     

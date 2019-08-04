@@ -23,14 +23,10 @@ public class SceneManagerScript : MonoBehaviour
     //============KONIEC SINGLETONA=======================
     
     public enum Scene {
-        StartingScene,
-        TestScene,
-        Test1,
-        Test2,
-        Test3,
+        BombLevel, HalfScreenVisible
     }
     public Scene currentScene;
-    public List<Scene> TestoweSceny = new List<Scene>() { Scene.Test1, Scene.Test2, Scene.Test3 };
+    public List<Scene> TestoweSceny = new List<Scene>();
     private bool[] visited = new bool[100];
     public int numberOfScenes = 3;
     public int visitedScenes = 0;

@@ -1374,7 +1374,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Press Left or Right mouse button: Show half of a screen.'
+  m_Text: Your gun is replaced with bombs.
 --- !u!222 &1449699205
 CanvasRenderer:
   m_ObjectHideFlags: 0

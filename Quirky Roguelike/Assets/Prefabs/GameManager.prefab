@@ -76,6 +76,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScene: 0
-  TestoweSceny: 020000000300000004000000
+  TestoweSceny: 0000000001000000
   numberOfScenes: 3
   visitedScenes: 0

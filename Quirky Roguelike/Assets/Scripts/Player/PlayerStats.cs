@@ -8,6 +8,13 @@ public class PlayerStats : EntityStats
 
     public float ShootingQuirkKnockback = 100;
 
+    public void SetHealth(int amount)
+    {
+        CurrentHp = amount;
+        if (OnHpChanged != null)
+            OnHpChanged.Invoke();
+    }
+
     protected override void Die()
     {
         base.Die();
