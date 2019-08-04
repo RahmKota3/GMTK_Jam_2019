@@ -22,7 +22,6 @@ public class SpawnGameManager : MonoBehaviour
 
     private void Start()
     {
-
         QuirkManager.Instance.QuirkSetup();
     }
 }

@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    
+    public string FirstSceneName = "FirstGameplayScene";
+
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        PlayerPrefs.SetInt("Health", 3);
+        SceneManager.LoadScene(FirstSceneName);
     }
 
     public void ExitGame()

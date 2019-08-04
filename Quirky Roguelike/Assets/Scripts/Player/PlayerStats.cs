@@ -11,6 +11,7 @@ public class PlayerStats : EntityStats
     public void SetHealth(int amount)
     {
         CurrentHp = amount;
+
         if (OnHpChanged != null)
             OnHpChanged.Invoke();
     }
@@ -26,5 +27,9 @@ public class PlayerStats : EntityStats
     {
         base.Awake();
         OnEntityDeath += Die;
+
+        if(PlayerPrefs.HasKey("Health") == false)
+            PlayerPrefs.SetInt("Health", CurrentHp);
     }
+    
 }

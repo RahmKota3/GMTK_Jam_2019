@@ -25,8 +25,6 @@ public class ScreenHider : MonoBehaviour
     {
         InputManager.Instance.OnShootPressed -= ShowLeftSide;
         InputManager.Instance.OnRMBPressed -= ShowRightSide;
-
-        Destroy(gameObject);
     }
 
     private void Start()

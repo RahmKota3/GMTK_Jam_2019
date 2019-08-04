@@ -19,7 +19,7 @@ public class EntityStats : MonoBehaviour
     public void ChangeHpBy(int amount = -1)
     {
         CurrentHp += amount;
-
+        
         if (OnHpChanged != null)
             OnHpChanged.Invoke();
 
