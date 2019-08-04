@@ -27,6 +27,8 @@ public class Dash : MonoBehaviour
 
             dashTimer = 0;
             movement.CanMove = false;
+
+            gameObject.layer = 14;
         }
     }
 
@@ -46,6 +48,9 @@ public class Dash : MonoBehaviour
         dashTimer += Time.deltaTime;
 
         if (dashTimer >= 0.25f)
+        {
             movement.CanMove = true;
+            gameObject.layer = 10;
+        }
     }
 }
